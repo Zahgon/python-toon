@@ -24,8 +24,7 @@ class LineWriter:
             depth: Indentation depth level
             content: Content to add
         """
-        indent = self._indentation_string * depth
-        self._lines.append(f"{indent}{content}")
+        pass
 
     def to_string(self) -> str:
         """Return all lines joined with newlines.
@@ -33,4 +32,4 @@ class LineWriter:
         Returns:
             Complete output string
         """
-        return "\n".join(self._lines)
+        pass

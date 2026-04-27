@@ -19,11 +19,7 @@ def encode(value: Any, options: Optional[EncodeOptions] = None) -> str:
     Returns:
         TOON-formatted string
     """
-    normalized = normalize_value(value)
-    resolved_options = resolve_options(options)
-    writer = LineWriter(resolved_options.indent)
-    encode_value(normalized, resolved_options, writer, 0)
-    return writer.to_string()
+    pass
 
 
 def resolve_options(options: Optional[EncodeOptions]) -> ResolvedEncodeOptions:
@@ -35,15 +31,4 @@ def resolve_options(options: Optional[EncodeOptions]) -> ResolvedEncodeOptions:
     Returns:
         Resolved options with defaults applied
     """
-    if options is None:
-        return ResolvedEncodeOptions()
-
-    indent = options.get("indent", 2)
-    delimiter = options.get("delimiter", DEFAULT_DELIMITER)
-    length_marker = options.get("lengthMarker", False)
-
-    # Resolve delimiter if it's a key
-    if delimiter in DELIMITERS:
-        delimiter = DELIMITERS[delimiter]
-
-    return ResolvedEncodeOptions(indent=indent, delimiter=delimiter, length_marker=length_marker)
+    pass
